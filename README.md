@@ -1,4 +1,4 @@
-# 🧬 Biological Relativity: Methylome Manifold Visualization Tool
+# Biological Relativity: Methylome Manifold Visualization Tool
 
 A practitioner tool for visualizing organ aging trajectories based on DNA methylation data, using concepts borrowed from general relativity. This mockup demonstrates how biological aging can be represented as motion on a 3D "methylation manifold" with position, velocity, and acceleration.
 
@@ -18,11 +18,7 @@ This tool enables practitioners to:
 
 The biological system (an organ) is treated as a point moving through a 3D manifold where:
 
-- **Position**: Current methylation state (3 principal components)
-  - PC1: Metabolic stress markers
-  - PC2: Inflammation markers  
-  - PC3: Oxidative damage markers
-
+- **Position**: Current methylation state 
 - **Velocity**: Rate of methylation change (aging speed)
 - **Acceleration**: How quickly the aging rate is changing
 - **Geodesics**: Optimal aging paths (healthy population trajectories)
@@ -70,51 +66,6 @@ Start the Streamlit app:
 streamlit run app.py
 ```
 
-The application will open in your default web browser (typically at `http://localhost:8501`).
-
-### Using the Interface
-
-#### Left Panel: 3D Visualization
-- **Blue line with diamonds**: Historical measurements (3 weeks of data)
-- **Red line**: Baseline prediction (no interventions)
-- **Green dashed line**: Healthy population reference
-- **Orange line**: Modified trajectory (with interventions applied)
-- **Transparent spheres**: Uncertainty regions
-
-#### Right Panel: Treatment Controls
-
-1. **Time Horizon**: Select 3, 6, or 12 months for predictions
-2. **Lifestyle Modifications**:
-   - Sleep duration changes
-   - VO₂max improvement (cardiovascular fitness)
-   - Alcohol reduction percentage
-   - Caffeine reduction (mg/day)
-
-3. **Pharmacological Interventions**:
-   - NAC (N-Acetylcysteine) dosage
-   - Metformin dosage
-
-4. **Real-time Updates**: Adjust sliders to see immediate trajectory changes
-
-#### Bottom Panel: Metrics
-
-- **Aging Velocity**: Speed of movement on the manifold
-- **Aging Acceleration**: Rate of change of aging velocity
-- **Deviation from Healthy**: Percentage difference from population average
-- **Biological Time Dilation**: Effect of interventions on biological aging rate
-
-### Interpreting Results
-
-**Good Trajectories:**
-- Orange line bends toward green line (healthy reference)
-- Reduced velocity and acceleration metrics
-- Positive time dilation (biological time slowing)
-
-**Poor Trajectories:**
-- Red line diverging from green line
-- Increasing velocity and acceleration
-- Growing deviation from healthy population
-
 ## File Structure
 
 ```
@@ -130,10 +81,6 @@ biological_relativity/
 ### Trajectory Calculation
 
 The system models aging trajectories using kinematic equations adapted from physics:
-
-```python
-position(t) = position₀ + velocity × t + ½ × acceleration × t²
-```
 
 Each dimension of the 3D manifold represents different biological processes:
 - **X-axis**: Metabolic stress (glucose regulation, lipid metabolism)
@@ -161,12 +108,9 @@ Prediction uncertainty grows with time:
 
 This is a **demonstration mockup** with synthetic data:
 
-- ✅ Shows realistic interface and visualization
-- ✅ Demonstrates concept of methylation manifold
-- ✅ Interactive intervention controls
-- ❌ Not based on real methylation data
-- ❌ Simplified intervention effect models
-- ❌ Does not replace actual clinical analysis
+- Shows realistic interface and visualization
+- Demonstrates concept of methylation manifold
+- Interactive intervention controls
 
 ## Future Development
 
@@ -206,16 +150,6 @@ This tool is inspired by concepts from:
 ## Disclaimer
 
 This is a research visualization tool for educational and demonstration purposes. It is **not a medical device** and should not be used for clinical diagnosis or treatment decisions without validation and regulatory approval. Always consult qualified healthcare professionals.
-
-## License
-
-This mockup is provided for demonstration purposes. Contact the authors for licensing information.
-
-## Contact
-
-For questions or collaboration:
-- Project: Biological Relativity Framework
-- Focus: Aging Dynamics & Methylome Manifolds
 
 ---
 
