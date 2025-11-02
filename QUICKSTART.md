@@ -1,6 +1,6 @@
 # 🚀 Quick Start Guide
 
-Get the Biological Relativity Methylome Manifold tool running in 3 minutes!
+Get ChronOS (Biological Relativity Methylome Manifold) running in 3 minutes!
 
 ## Step 1: Install Dependencies
 
@@ -8,7 +8,22 @@ Get the Biological Relativity Methylome Manifold tool running in 3 minutes!
 pip install -r requirements.txt
 ```
 
-## Step 2: Run the Application
+## Step 2: (Optional) Set Up Claude AI for Reports
+
+✅ **Already configured!** The app loads your API key from the `.env` file.
+
+**Your `.env` file should contain:**
+```bash
+ANTHROPIC_API_KEY=your_api_key_here
+```
+
+Get your API key from [Anthropic Console](https://console.anthropic.com/)
+
+📖 **See `SETUP_CLAUDE.md` for detailed setup instructions**
+
+*You can skip this step and still use all visualization features!*
+
+## Step 3: Run the Application
 
 ### Windows
 Double-click `run.bat` or run in command prompt:
@@ -28,17 +43,18 @@ chmod +x run.sh
 streamlit run app.py
 ```
 
-## Step 3: Explore the Interface
+## Step 4: Explore the Interface
 
 The app will open in your browser at `http://localhost:8501`
 
 ### What You'll See
 
 **📊 Left Side - 3D Visualization:**
-- **Blue diamonds**: Patient's 3 historical measurements (3 weeks)
-- **Red line**: Predicted path without changes (baseline)
-- **Green dashed**: Healthy population reference
-- **Orange line**: Modified path with your interventions
+- **Gray dots**: Jeff's 3 historical measurements (3 weeks of liver DNA methylation)
+- **Amber line**: Status Quo trajectory (no intervention)
+- **Green line + band**: Healthy population reference with uncertainty
+- **Cyan line**: Modified path with your interventions
+- **Yellow marker**: Current position
 
 **🎛️ Right Side - Controls:**
 1. Select time horizon (3/6/12 months)
@@ -60,11 +76,16 @@ The app will open in your browser at `http://localhost:8501`
 
 ### Understanding the Metrics
 
-**🎯 Bottom Panel:**
-- **Aging Velocity**: Lower is better (slower aging)
-- **Acceleration**: Lower is better (stable aging rate)
-- **Deviation**: Lower % means closer to healthy population
-- **Time Dilation**: Higher % = biological time slowing down
+**🎯 HUD Metrics (below visualization):**
+Shows three rows of metrics:
+- **Status Quo (No Intervention)**: Baseline trajectory metrics
+- **Healthy Population**: Reference values for healthy aging
+- **With Interventions**: Your customized protocol with deltas (▲/▼)
+
+Key metrics:
+- **Velocity**: Aging speed on manifold (lower = slower aging)
+- **Acceleration**: Rate of change (lower = more stable)
+- **Uncertainty**: Trajectory confidence (lower = more predictable)
 
 ### Recommended Scenarios to Explore
 
@@ -89,6 +110,32 @@ The app will open in your browser at `http://localhost:8501`
 - Metformin: 1000mg
 - Maximum trajectory correction
 
+### 🤖 AI-Powered Reports (New!)
+
+After adjusting interventions:
+
+1. **Click "🔬 Generate Clinical Report"** at the bottom
+2. Wait ~3-5 seconds for Claude AI to analyze
+3. **Review the report** with:
+   - Progress summary
+   - Intervention impact analysis
+   - Concrete recommendations
+   - Areas of concern
+   - Motivational guidance
+4. **Download as text file** to share with patient
+
+**What the AI analyzes:**
+- Velocity and acceleration changes (%)
+- Distance to healthy trajectory
+- Which interventions are driving improvements
+- Biological mechanisms at play
+- Personalized next steps
+
+**Requirements:**
+- `ANTHROPIC_API_KEY` must be set (see Step 2)
+- Internet connection
+- ~$0.01-0.02 per report generated
+
 ## Troubleshooting
 
 **App won't start:**
@@ -104,6 +151,12 @@ The app will open in your browser at `http://localhost:8501`
 - Reduce time horizon to 3 months
 - Close other browser tabs
 - Restart the app
+
+**Report generation failing:**
+- Check `ANTHROPIC_API_KEY` is set: `echo $ANTHROPIC_API_KEY`
+- Verify API key is active at [console.anthropic.com](https://console.anthropic.com/)
+- Check internet connection
+- See `SETUP_CLAUDE.md` for detailed troubleshooting
 
 ## Next Steps
 
